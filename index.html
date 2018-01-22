@@ -4,10 +4,148 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Life Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
   </head>
   <body>
-    <h1>
-      Life Chat Project
-    </h1>
+
+    <section class="hero header is-fade is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+
+          <div class="card supportCard">
+            <div class="card-content">
+              <div class="content">
+                <h1 class="title">
+                  Life Chat Project
+                </h1>
+                <h2 class="subtitle">
+                  Placeholder Text
+                </h2>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a href="#" id="meetTheTeamBtn" class="card-footer-item is-black-url">Meet the Team</a>
+              <a href="#" class="card-footer-item is-black-url">Open Chat</a>
+              <a href="#" id="aboutBtn" class="card-footer-item is-black-url">About</a>
+            </footer>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section footer">
+      <div class="container">
+
+        <h2 class="is-white subtitle">
+        &copy; Life Chat Project, 2018 <br />
+        Made with &hearts; and <a href="https://bulma.io">Bulma</a>
+        </h2>
+
+      </div>
+    </section>
+
+    <!-- Information cards (About, meet the team) -->
+
+    <div id="meetTheTeam" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+
+        <div class="card supportCard">
+          <div class="card-content">
+            <div class="content">
+              <h1 class="title">
+                Meet The Team
+              </h1>
+              <h2 class="subtitle">
+                Placeholder Text
+              </h2>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+    <div id="about" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+
+        <div class="card supportCard">
+          <div class="card-content">
+            <div class="content">
+              <h1 class="title">
+                About
+              </h1>
+              <h2 class="subtitle">
+                Placeholder Text
+              </h2>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+    <script>
+
+      /*
+
+      MEET THE TEAM MODAL
+
+      */
+
+      document.querySelector('a#meetTheTeamBtn').addEventListener('click', function(event) {
+        event.preventDefault();
+        var modal = document.querySelector('#meetTheTeam');  // assuming you have only 1
+        var html = document.querySelector('html');
+        modal.classList.add('is-active');
+        html.classList.add('is-clipped');
+
+        modal.querySelector('.modal-background').addEventListener('click', function(e) {
+          e.preventDefault();
+          modal.classList.remove('is-active');
+          html.classList.remove('is-clipped');
+        });
+
+        modal.querySelector('.modal-close').addEventListener('click', function(e) {
+          e.preventDefault();
+          modal.classList.remove('is-active');
+          html.classList.remove('is-clipped');
+        });
+      });
+
+      /*
+
+      ABOUT MODAL
+
+      */
+
+      document.querySelector('a#aboutBtn').addEventListener('click', function(event) {
+        event.preventDefault();
+        var modal = document.querySelector('#about');  // assuming you have only 1
+        var html = document.querySelector('html');
+        modal.classList.add('is-active');
+        html.classList.add('is-clipped');
+
+        modal.querySelector('.modal-background').addEventListener('click', function(e) {
+          e.preventDefault();
+          modal.classList.remove('is-active');
+          html.classList.remove('is-clipped');
+        });
+
+        modal.querySelector('.modal-close').addEventListener('click', function(e) {
+          e.preventDefault();
+          modal.classList.remove('is-active');
+          html.classList.remove('is-clipped');
+        });
+      });
+
+    </script>
+
   </body>
 </html>

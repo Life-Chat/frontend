@@ -1,0 +1,77 @@
+
+
+/* Let's modify font sizes and such */
+.header .title {
+  text-align: center;
+  font-size: 50px;
+}
+.header .subtitle {
+  text-align: center;
+  font-size: 35px;
+}
+
+/* Simple white text */
+.is-white {
+  color: white;
+}
+
+/* Messing with background colours */
+.footer {
+  background-color: rgb(20, 20, 20);
+}
+body {
+  background-color: rgb(20, 20, 20);
+}
+
+/* Modifiers for the card on landing page */
+.supportCard {
+  margin: 0px 10% 0px 10%;
+}
+
+/* URL is always black, shadow effect */
+.is-black-url {
+  color: black;
+  transition-duration: 0.2s;
+}
+.is-black-url:hover {
+  color: black;
+  text-shadow: 2px 2px 16px #000;
+  transition-duration: 0.2s;
+}
+
+/*
+
+  FADE EFFECT ANIMATION FOR WEBSITE
+
+*/
+
+.is-fade {
+  background: linear-gradient(270deg, #ed1a1a, #4261f2, #361aed);
+  background-size: 600% 600%;
+
+  -webkit-animation: FooterFade 25s ease infinite;
+  -moz-animation: FooterFade 25s ease infinite;
+  -o-animation: FooterFade 25s ease infinite;
+  animation: FooterFade 25s ease infinite;
+}
+
+@-webkit-keyframes FooterFade {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes FooterFade {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-o-keyframes FooterFade {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes FooterFade {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
