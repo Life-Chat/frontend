@@ -46,7 +46,7 @@ body {
 */
 
 .is-fade {
-  background: linear-gradient(270deg, #ed1a1a, #4261f2, #361aed);
+  background: linear-gradient(270deg, #7ad2f5, #66b5ff, #002fff, #520cf5, #cf1bb1);
   background-size: 600% 600%;
 
   -webkit-animation: FooterFade 25s ease infinite;
