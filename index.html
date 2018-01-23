@@ -59,9 +59,8 @@
               <h1 class="title">
                 Meet The Team
               </h1>
-              <h2 class="subtitle">
-                Placeholder Text
-              </h2>
+              <div id="members">
+              </div>
             </div>
           </div>
         </div>
@@ -147,6 +146,46 @@
           html.classList.remove('is-clipped');
         });
       });
+
+      /*
+
+      TEAM MEMBERS
+
+      */
+
+      var xhr = new XMLHttpRequest(); // XHR request to
+      xhr.open("GET", "https://api.github.com/orgs/Life-Chat/members", true); // Orgs member page
+      xhr.onload = function (e) {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) { // If everything is OK
+            const response = JSON.parse(xhr.responseText); // Parses into JSON
+            for (var member in response) { // For each member in the project
+              var newElement = document.createElement('div'); // Makes a new div for each member
+              newElement.className = "member card"; // Uhh let's start building html content wish me luck
+              newElement.innerHTML = '<div class="card-content"> \
+                  <div class="media"> \
+                    <div class="media-left"> \
+                      <figure class="image is-96x96"> \
+                        <img src=' + response[member]["avatar_url"] + ' alt="Picture"> \
+                      </figure> \
+                    </div> \
+                    <div class="media-content"> \
+                      <p class="title is-4">' + response[member]["login"] + '</p> \
+                        <a href=' + response[member]["html_url"] + ' class="button is-medium is-dark is-black-url">Github</a> \
+                    </div> \
+                  </div> \
+                </div>'; // Phew it's over
+              document.getElementById("members").appendChild(newElement); //Actually sets the div there
+            };
+          } else {
+            console.error(xhr.statusText); // Logs error
+          }
+        }
+      };
+      xhr.onerror = function (e) {
+        console.error(xhr.statusText); // yeah logs error
+      };
+      xhr.send(null);
 
     </script>
 
