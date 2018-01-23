@@ -10,11 +10,11 @@
   </head>
   <body>
 
-    <section class="hero header is-fade is-fullheight">
+    <section class="hero header is-fullheight">
       <div class="hero-body">
         <div class="container">
 
-          <div class="card supportCard">
+          <div class="card supportCard has-box-shadow">
             <div class="card-content">
               <div class="content">
                 <h1 class="title">
@@ -26,14 +26,58 @@
               </div>
             </div>
             <footer class="card-footer">
-              <a href="#" id="meetTheTeamBtn" class="card-footer-item is-black-url">Meet the Team</a>
               <a href="#" class="card-footer-item is-black-url">Open Chat</a>
-              <a href="#" id="aboutBtn" class="card-footer-item is-black-url">About</a>
             </footer>
           </div>
 
         </div>
       </div>
+
+      <div class="hero-foot">
+        <div class="container">
+          <a href="#members" class="scrollBtn">
+            <i class="fas fa-angle-double-down" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <a class="scrollTarget" name="members"></a>
+
+    <section class="hero meetTheTeam has-white-bg">
+
+      <div class="container has-padding">
+        <h1 class="title">Meet the Team.</h1>
+        <div id="meetTheTeam" class="columns is-multiline">
+        </div>
+      </div>
+
+    </section>
+
+    <section class="hero about has-white-bg">
+      <a name="about"></a>
+
+      <div class="container has-padding">
+        <h1 class="title">About.</h1>
+        <div id="about" class="columns is-multiline">
+
+          <div class="card has-card-padding has-box-shadow">
+            <div class="card-content">
+              <h2 class="title">Foo Bar</h2>
+              <h3 class="subtitle">Foo Bar</h3>
+            </div>
+            <footer class="card-footer">
+              <span class="card-footer-item">
+                <a href="https://example.com" class="button is-dark">
+                  Foo bar
+                </a>
+              </span>
+            </footer>
+          </div>
+
+        </div>
+      </div>
+
     </section>
 
     <section class="section footer">
@@ -47,105 +91,7 @@
       </div>
     </section>
 
-    <!-- Information cards (About, meet the team) -->
-
-    <div id="meetTheTeam" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-
-        <div class="card supportCard">
-          <div class="card-content">
-            <div class="content">
-              <h1 class="title">
-                Meet The Team
-              </h1>
-              <div id="members">
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-
-    <div id="about" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-
-        <div class="card supportCard">
-          <div class="card-content">
-            <div class="content">
-              <h1 class="title">
-                About
-              </h1>
-              <h2 class="subtitle">
-                Life Chat Project is.. ..yeah.
-              </h2>
-            </div>
-          </div>
-          <footer class="card-footer">
-            <a href="https://github.com/Life-Chat" class="card-footer-item is-black-url">Github</a>
-          </footer>
-        </div>
-
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-
     <script>
-
-      /*
-
-      MEET THE TEAM MODAL
-
-      */
-
-      document.querySelector('a#meetTheTeamBtn').addEventListener('click', function(event) {
-        event.preventDefault();
-        var modal = document.querySelector('#meetTheTeam');  // assuming you have only 1
-        var html = document.querySelector('html');
-        modal.classList.add('is-active');
-        html.classList.add('is-clipped');
-
-        modal.querySelector('.modal-background').addEventListener('click', function(e) {
-          e.preventDefault();
-          modal.classList.remove('is-active');
-          html.classList.remove('is-clipped');
-        });
-
-        modal.querySelector('.modal-close').addEventListener('click', function(e) {
-          e.preventDefault();
-          modal.classList.remove('is-active');
-          html.classList.remove('is-clipped');
-        });
-      });
-
-      /*
-
-      ABOUT MODAL
-
-      */
-
-      document.querySelector('a#aboutBtn').addEventListener('click', function(event) {
-        event.preventDefault();
-        var modal = document.querySelector('#about');  // assuming you have only 1
-        var html = document.querySelector('html');
-        modal.classList.add('is-active');
-        html.classList.add('is-clipped');
-
-        modal.querySelector('.modal-background').addEventListener('click', function(e) {
-          e.preventDefault();
-          modal.classList.remove('is-active');
-          html.classList.remove('is-clipped');
-        });
-
-        modal.querySelector('.modal-close').addEventListener('click', function(e) {
-          e.preventDefault();
-          modal.classList.remove('is-active');
-          html.classList.remove('is-clipped');
-        });
-      });
 
       /*
 
@@ -161,7 +107,7 @@
             const response = JSON.parse(xhr.responseText); // Parses into JSON
             for (var member in response) { // For each member in the project
               var newElement = document.createElement('div'); // Makes a new div for each member
-              newElement.className = "member card"; // Uhh let's start building html content wish me luck
+              newElement.className = "has-card-padding card has-box-shadow"; // Uhh let's start building html content wish me luck
               newElement.innerHTML = '<div class="card-content"> \
                   <div class="media"> \
                     <div class="media-left"> \
@@ -171,11 +117,11 @@
                     </div> \
                     <div class="media-content"> \
                       <p class="title is-4">' + response[member]["login"] + '</p> \
-                        <a href=' + response[member]["html_url"] + ' class="button is-medium is-dark is-black-url">Github</a> \
+                        <a href=' + response[member]["html_url"] + ' class="button is-medium is-dark">GitHub</a> \
                     </div> \
                   </div> \
                 </div>'; // Phew it's over
-              document.getElementById("members").appendChild(newElement); //Actually sets the div there
+              document.getElementById("meetTheTeam").appendChild(newElement); //Actually sets the div there
             };
           } else {
             console.error(xhr.statusText); // Logs error
