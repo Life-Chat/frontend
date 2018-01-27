@@ -1,52 +1,75 @@
-
-
 /* Let's modify font sizes and such */
+
 .header .title {
-  text-align: center;
-  font-size: 50px;
+	text-align: center;
+	font-size: 50px;
 }
+
 .header .subtitle {
-  text-align: center;
-  font-size: 35px;
+	text-align: center;
+	font-size: 35px;
 }
 
 .scrollBtn {
-  color: white;
-  text-align: center;
-  font-size: 40px;
-  padding: 15px;
-  margin: 0 auto;
-  display: block;
+	color: white;
+	text-align: center;
+	font-size: 40px;
+	padding: 15px;
+	margin: 0 auto;
+	display: block;
+}
+
+.scrollBtn:hover {
+	color: white;
 }
 
 /* Simple white text */
+
 .is-white {
-  color: white;
+	color: white;
 }
 
 /* Messing with background colours */
+
 .footer {
-  background-color: rgb(20, 20, 20);
+	background-color: rgb(20, 20, 20);
 }
+
 body {
-  background-color: rgb(20, 20, 20);
+	background-color: rgb(20, 20, 20);
 }
+
 .has-white-bg {
-  background-color: #f2f1ef;
+	background-color: #f2f1ef;
 }
+
 .header {
-  background-color: rgb(20, 20, 20);
+	background-color: rgb(40, 40, 40);
 }
 
 /* URL is always black, shadow effect */
+
 .is-black-url {
-  color: black;
-  transition-duration: 0.2s;
+	color: black;
+	transition-duration: 0.2s;
 }
+
 .is-black-url:hover {
-  color: black;
-  text-shadow: 2px 2px 16px #000;
-  transition-duration: 0.2s;
+	color: black;
+	text-shadow: 2px 2px 16px #000;
+	transition-duration: 0.2s;
+}
+
+/* URL is white black, shadow effect */
+
+.is-white-url {
+	color: white;
+	transition-duration: 0.2s;
+}
+
+.is-white-url:hover {
+	color: rgba(255, 240, 240, 0.8);
+	transition-duration: 0.2s;
 }
 
 /*
@@ -56,22 +79,22 @@ body {
 */
 
 .supportCard {
-  border-radius: 15px;
+	border-radius: 15px;
 }
 
 .has-box-shadow {
-  -webkit-box-shadow: 0px 26px 49px 10px rgba(0,0,0,0.37);
-  -moz-box-shadow: 0px 26px 49px 10px rgba(0,0,0,0.37);
-  box-shadow: 0px 26px 49px 10px rgba(0,0,0,0.37);
+	-webkit-box-shadow: 0px 26px 49px 10px rgba(0, 0, 0, 0.37);
+	-moz-box-shadow: 0px 26px 49px 10px rgba(0, 0, 0, 0.37);
+	box-shadow: 0px 26px 49px 10px rgba(0, 0, 0, 0.37);
 }
 
 .has-padding {
-  padding: 20px;
-  margin: 30px 10px 10px 10px;
+	padding: 20px;
+	margin: 30px 10px 10px 10px;
 }
 
 .has-card-padding {
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 10px 10px 10px;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px 10px 10px 10px;
 }

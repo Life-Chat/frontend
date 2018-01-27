@@ -1,139 +1,139 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Life Chat</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
-  </head>
-  <body>
 
-    <section class="hero header is-fullheight">
-      <div class="hero-body">
-        <div class="container">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Life Chat</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheet/style.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+</head>
 
-          <div class="card supportCard has-box-shadow">
-            <div class="card-content">
-              <div class="content">
-                <h1 class="title">
-                  Life Chat Project
-                </h1>
-                <h2 class="subtitle">
-                  Placeholder Text
-                </h2>
-              </div>
-            </div>
-            <footer class="card-footer">
-              <a href="#" class="card-footer-item is-black-url">Open Chat</a>
-            </footer>
-          </div>
+<body>
 
-        </div>
-      </div>
+	<section class="hero header is-fullheight">
+		<div class="hero-body">
+			<div class="container">
 
-      <div class="hero-foot">
-        <div class="container">
-          <a href="#members" class="scrollBtn">
-            <i class="fas fa-angle-double-down" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-    </section>
+				<div class="card supportCard has-box-shadow">
+					<div class="card-content">
+						<div class="content">
+							<h1 class="title">
+								Life Chat
+							</h1>
+							<h2 class="subtitle">
+								We're here to help.
+							</h2>
+						</div>
+					</div>
+					<footer class="card-footer">
+						<a href="#" class="card-footer-item is-black-url">Open Chat</a>
+					</footer>
+				</div>
 
-    <a class="scrollTarget" name="members"></a>
+			</div>
+		</div>
 
-    <section class="hero meetTheTeam has-white-bg">
+		<div class="hero-foot">
+			<div class="container">
+				<a href="#content" class="scrollBtn">
+					<i class="fas fa-angle-double-down is-white-url" aria-hidden="true"></i>
+				</a>
+			</div>
+		</div>
+	</section>
 
-      <div class="container has-padding">
-        <h1 class="title">Meet the Team.</h1>
-        <div id="meetTheTeam" class="columns is-multiline">
-        </div>
-      </div>
+	<a class="scrollTarget" name="content"></a>
 
-    </section>
+	<section class="hero about has-white-bg">
+		<a name="about"></a>
 
-    <section class="hero about has-white-bg">
-      <a name="about"></a>
+		<div class="container has-padding">
+			<h1 class="title">About.</h1>
+			<div id="about" class="columns is-multiline">
 
-      <div class="container has-padding">
-        <h1 class="title">About.</h1>
-        <div id="about" class="columns is-multiline">
+				<div class="card has-card-padding has-box-shadow">
+					<div class="card-content">
+						<h2 class="title">Foo Bar</h2>
+						<h3 class="subtitle">Foo Bar</h3>
+					</div>
+					<footer class="card-footer">
+						<span class="card-footer-item">
+							<a href="https://example.com" class="button is-dark">
+								Foo bar
+							</a>
+						</span>
+					</footer>
+				</div>
 
-          <div class="card has-card-padding has-box-shadow">
-            <div class="card-content">
-              <h2 class="title">Foo Bar</h2>
-              <h3 class="subtitle">Foo Bar</h3>
-            </div>
-            <footer class="card-footer">
-              <span class="card-footer-item">
-                <a href="https://example.com" class="button is-dark">
-                  Foo bar
-                </a>
-              </span>
-            </footer>
-          </div>
+			</div>
+		</div>
 
-        </div>
-      </div>
+	</section>
 
-    </section>
+	<section class="hero meetTheTeam has-white-bg">
 
-    <section class="section footer">
-      <div class="container">
+		<div class="container has-padding">
+			<h1 class="title">Meet the Team.</h1>
+			<div id="meetTheTeam" class="columns is-multiline">
+			</div>
+		</div>
 
-        <h2 class="is-white subtitle">
-        &copy; Life Chat Project, 2018 <br />
-        Made with &hearts; and <a href="https://bulma.io">Bulma</a>
-        </h2>
+	</section>
 
-      </div>
-    </section>
+	<section class="section footer">
+		<div class="container">
 
-    <script>
+			<h2 class="is-white subtitle">
+				&copy; Life Chat Project, 2018 <br /> Made with &hearts; and <a href="https://bulma.io">Bulma</a>
+			</h2>
 
-      /*
+		</div>
+	</section>
 
-      TEAM MEMBERS
+	<script>
+		/*
+		TEAM MEMBERS
+		*/
 
-      */
+		var xhr = new XMLHttpRequest(); // XHR request to
+		xhr.open("GET", "https://api.github.com/orgs/Life-Chat/members", true); // Orgs member page
+		xhr.onload = function(e) {
+			if (xhr.readyState === 4) {
+				if (xhr.status === 200) { // If everything is OK
+					const response = JSON.parse(xhr.responseText); // Parses into JSON
+					for (var member in response) { // For each member in the project
+						var newElement = document.createElement('div'); // Makes a new div for each member
+						newElement.className = "has-card-padding card has-box-shadow"; // Uhh let's start building html content wish me luck
+						newElement.innerHTML = '\
+							<div class="card-content"> \
+								<div class="media"> \
+									<div class="media-left"> \
+										<figure class="image is-96x96"> \
+											<img src=' + response[member]["avatar_url"] + ' alt="Picture"> \
+										</figure> \
+									</div> \
+									<div class="media-content"> \
+										<p class="title is-4">' + response[member]["login"] + '</p> \
+										<a href=' + response[member]["html_url"] + ' class="button is-medium is-dark">GitHub</a> \
+									</div> \
+								</div> \
+							</div>'; // Phew it's over
+						document.getElementById("meetTheTeam").appendChild(newElement); //Actually sets the div there
+					};
+				} else {
+					console.error(xhr.statusText); // Logs error
+				}
+			}
+		};
+		xhr.onerror = function(e) {
+			console.error(xhr.statusText); // yeah logs error
+		};
+		xhr.send(null);
 
-      var xhr = new XMLHttpRequest(); // XHR request to
-      xhr.open("GET", "https://api.github.com/orgs/Life-Chat/members", true); // Orgs member page
-      xhr.onload = function (e) {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) { // If everything is OK
-            const response = JSON.parse(xhr.responseText); // Parses into JSON
-            for (var member in response) { // For each member in the project
-              var newElement = document.createElement('div'); // Makes a new div for each member
-              newElement.className = "has-card-padding card has-box-shadow"; // Uhh let's start building html content wish me luck
-              newElement.innerHTML = '<div class="card-content"> \
-                  <div class="media"> \
-                    <div class="media-left"> \
-                      <figure class="image is-96x96"> \
-                        <img src=' + response[member]["avatar_url"] + ' alt="Picture"> \
-                      </figure> \
-                    </div> \
-                    <div class="media-content"> \
-                      <p class="title is-4">' + response[member]["login"] + '</p> \
-                        <a href=' + response[member]["html_url"] + ' class="button is-medium is-dark">GitHub</a> \
-                    </div> \
-                  </div> \
-                </div>'; // Phew it's over
-              document.getElementById("meetTheTeam").appendChild(newElement); //Actually sets the div there
-            };
-          } else {
-            console.error(xhr.statusText); // Logs error
-          }
-        }
-      };
-      xhr.onerror = function (e) {
-        console.error(xhr.statusText); // yeah logs error
-      };
-      xhr.send(null);
+	</script>
 
-    </script>
+</body>
 
-  </body>
 </html>
