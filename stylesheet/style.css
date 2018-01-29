@@ -1,3 +1,76 @@
+/*
+FOOTER FADE ANIMATION
+*/
+
+.is-fade {
+	background: linear-gradient(270deg, #ed1a1a, #4261f2, #361aed);
+	background-size: 600% 600%;
+
+	-webkit-animation: FooterFade 25s ease infinite;
+	-moz-animation: FooterFade 25s ease infinite;
+	-o-animation: FooterFade 25s ease infinite;
+	animation: FooterFade 25s ease infinite;
+}
+
+@-webkit-keyframes FooterFade {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes FooterFade {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-o-keyframes FooterFade {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes FooterFade {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+.is-logo-style {
+	background-color: white;
+	color: inherit;
+	mix-blend-mode: luminosity;
+	font-style: italic;
+	padding: 10px;
+	opacity: 1;
+	border-radius: 5px;
+}
+
+
 /* Let's modify font sizes and such */
 
 .header .title {
@@ -78,10 +151,6 @@ body {
 
 */
 
-.supportCard {
-	border-radius: 15px;
-}
-
 .has-box-shadow {
 	-webkit-box-shadow: 0px 26px 49px 10px rgba(0, 0, 0, 0.37);
 	-moz-box-shadow: 0px 26px 49px 10px rgba(0, 0, 0, 0.37);
@@ -91,6 +160,11 @@ body {
 .has-padding {
 	padding: 20px;
 	margin: 30px 10px 10px 10px;
+}
+
+.has-a-lot-of-padding {
+	padding: 40px;
+	display: inline-block;
 }
 
 .has-card-padding {
